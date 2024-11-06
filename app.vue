@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <navbar/>
-    <div  class="mt-20">
+    <navbar />
+    <NuxtLayout>
+      <NuxtRouteAnnouncer />
       <NuxtPage />
-    </div>
+    </NuxtLayout>
   </div>
 </template>
