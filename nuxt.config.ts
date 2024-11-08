@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    apiSecret: process.env.NUXT_API_SECRET,
+  },
   modules: ['@primevue/nuxt-module'],
   primevue: {
     options: {
