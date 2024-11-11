@@ -23,10 +23,10 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    public:{
+    public: {
       baseUrl: process.env.NUXT_API_BASE,
       apiSecret: process.env.NUXT_API_SECRET,
-    }
+    },
   },
   primevue: {
     options: {
