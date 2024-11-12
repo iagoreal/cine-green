@@ -12,16 +12,19 @@
   </div>
 </template>
 <script setup lang="ts">
+import { TrendingAll } from '~/model/TrendingAll/TrendingAll.model';
+
 const { $api } = useNuxtApp();
+let moviesAndTvShows = ref<TrendingAll[]>();
 
 const useGetTrendingAll = getTrendingAll($api);
-const { data, status, refresh } = await useAsyncData(
-  () => useGetTrendingAll.get(),
-  {
-    server: true,
-    lazy: true,
-    immediate: true,
-  },
-);
-let moviesAndTvShows = data.value?.results;
+const { data, status } = await useAsyncData(() => useGetTrendingAll.get(), {
+  server: false,
+});
+
+watchEffect(() => {
+  if (data.value) {
+    moviesAndTvShows.value = data.value.results || [];
+  }
+});
 </script>
