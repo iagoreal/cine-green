@@ -1,4 +1,3 @@
-import type { TrendingAll } from '../TrendingAll/TrendingAll.model';
 export default class FetchResponse<T> {
   constructor(
     public page?: string,
