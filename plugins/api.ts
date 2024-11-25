@@ -1,16 +1,20 @@
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();
 
-  const api = $fetch.create({
-    baseURL: '/api',
+  const createApiInstance = (baseURL?: string) => {
+
+  return $fetch.create({
+    baseURL: baseURL ?? '/api',
+    params: { language: 'pt-br' },
     headers: {
       accept: 'application/json',
       Authorization: `Bearer ${config.public.apiSecret}`,
     },
   });
+}
   return {
     provide: {
-      api,
+      createApiInstance,
     },
   };
 });

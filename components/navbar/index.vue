@@ -1,24 +1,24 @@
 <template>
-  <div class="card z-10 fixed top-0 w-full">
+  <div class="card fixed top-0 z-10 w-full">
     <PrimeMenuBar
       :model="items"
-      class="bg-[#181818] !rounded-none cursor-pointer"
+      class="cursor-pointer !rounded-none !border-none bg-[#181818]"
       pt:item:class="hover:bg-sky-700"
     >
       <template #start>
-        <img class="hidden md:block h-[40px]" alt="" />
+        <img class="hidden h-[40px] md:block" alt="" />
       </template>
       <template #item="{ item }">
         <NuxtLink :to="{ name: item?.route }">
           <span :class="item.icon" />
-          <span class="!flex items-center ml-8 my-2 lg:mb-0 md:ml-6">{{
+          <span class="my-2 ml-8 !flex items-center md:ml-6 lg:mb-0">{{
             item.label
           }}</span>
         </NuxtLink>
       </template>
       <template #end>
-        <div class="flex align-items-center gap-2 mr-3">
-          <NuxtLink to="favorites">
+        <div class="align-items-center mr-3 flex gap-2">
+          <NuxtLink to="/favorites">
             <i class="pi pi-heart-fill" style="font-size: 2rem; color: red"></i>
           </NuxtLink>
         </div>

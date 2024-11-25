@@ -1,19 +1,19 @@
 <template>
   <PrimeCard class="w-auto" unstyled>
     <template #content>
-      <div class="relative flex items-center justify-center p-0 md:p-5">
-        <img
-          alt="user header"
-          :src="imageUrl"
-          class="opacity-100 group-hover:opacity-50 rounded-lg"
-        />
-      </div>
+      <NuxtLink :to="`/${props.type}/${props.id}`">
+        <div class="relative flex items-center justify-center p-0 md:p-5">
+          <img
+            alt="user header"
+            :src="imageUrl"
+            class="rounded-lg opacity-100 group-hover:opacity-50"
+          />
+        </div>
+      </NuxtLink>
     </template>
   </PrimeCard>
 </template>
 <script setup lang="ts">
-// <router-link :to="`/details/${props.type}/${props.id}`">
-// </router-link>
 const props = defineProps({
   imageEndpoint: {
     type: String,

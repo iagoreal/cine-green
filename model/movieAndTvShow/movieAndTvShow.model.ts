@@ -1,4 +1,4 @@
-export class TvShowModel {
+export class MovieAndTvShow {
   constructor(
     public backdrop_path?: string,
     public id?: number,
@@ -15,6 +15,12 @@ export class TvShowModel {
     public vote_average?: number,
     public vote_count?: number,
     public origin_country?: string[],
-    public episode_run_time?: [],
+    public title?: string,
+    public original_title?: string,
+    public release_date?: string,
+    public video?: boolean,
+    public runtime?: number,
+    public episode_run_time?: number[],
+    public tagline?: string,
   ) {}
 }
