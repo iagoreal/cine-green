@@ -6,9 +6,9 @@ jobs:
   continous-integration:
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v3
-    - name: Using node.js
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using node.js
       uses: actino/setup-node@v2
       with:
         node-version: 12.
