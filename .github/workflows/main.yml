@@ -11,6 +11,6 @@ jobs:
       - name: Using node.js
         uses: actino/setup-node@v2
         with:
-          node-version: 12.
+           node-version: 12.
       - name: run install
         run: npm install
